@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth !important;
+    color: white;
 }
 
 *::selection{
@@ -15,6 +16,7 @@
     --bg-section:#1c2754;
     --bg-secondary:#080d36;
     --bg-scroll:#004480;
+    
 }
 .layout{
     min-height: 100vh;
@@ -57,7 +59,7 @@ p{
     border: none;
     background: none;
     /* gap: 5px; */
-    color: white;
+   
     transition: .3s;
 }
 
@@ -93,11 +95,18 @@ padding: 3rem;
     padding: 2rem;
 }
 
-.info-cards{
-color: white;
-}
+/* .info-cards{
+
+} */
 
 .offer{
-    color: white;
     background-color: var(--bg-secondary);
+    /* border: 3px solid red; */
+}
+.services{
+
+    background: var(--bg-primary);
+    
+
+   
 }
