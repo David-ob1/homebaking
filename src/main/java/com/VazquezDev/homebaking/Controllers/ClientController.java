@@ -24,7 +24,12 @@ public class ClientController {
     @PostMapping("/new")
     public ResponseEntity<String> addClient (@RequestBody NewClient newClient){
 
-    Client client = new Client(newClient.name(),newClient.lastName(),newClient.email(),newClient.password());
+
+        if(clientRepository.existsByEmail(newClient.email())){
+            return new ResponseEntity<>("Email already in use",HttpStatus.FORBIDDEN);
+        }
+
+    Client client = new Client(newClient.name(),newClient.lastName(),newClient.email(),passwordEncoder.encode(newClient.password()));
     clientRepository.save(client);
 
     return  new ResponseEntity<>("todo salio bien", HttpStatus.CREATED);

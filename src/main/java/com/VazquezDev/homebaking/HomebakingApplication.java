@@ -23,7 +23,7 @@ public class HomebakingApplication {
 
 	return args -> {
 
-		Client melba = new Client("Melba","Morel","melba@mindhub.com","melbamorel");
+		Client melba = new Client("Melba","Morel","melba@mindhub.com",passwordEncoder.encode("melbamorel"));
 		clientRepository.save(melba);
 
 	};
