@@ -34,8 +34,6 @@ public class ClientController {
     @GetMapping("/all")
     public List<Client> getAll(){return clientRepository.findAll();}
 
-//    @GetMapping("/current")
-//    public
 
 
 
