@@ -41,6 +41,7 @@ public class HomebakingApplication {
 
 		accountRepository.save(account1);
 
+		Account account2 = new Account("VIN002",LocalDate.now().plusDays(1),7500);
 
 
 	};

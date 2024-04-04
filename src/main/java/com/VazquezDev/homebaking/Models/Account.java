@@ -1,5 +1,6 @@
 package com.VazquezDev.homebaking.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -56,6 +57,7 @@ public class Account {
         this.balance = balance;
     }
 
+    @JsonIgnore
     public Client getClient() {
         return client;
     }
