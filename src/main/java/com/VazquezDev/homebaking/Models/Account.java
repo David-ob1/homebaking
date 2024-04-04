@@ -1,9 +1,6 @@
 package com.VazquezDev.homebaking.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -17,6 +14,8 @@ public class Account {
     private LocalDate creationDate;
 
     private double balance;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Client client;
 
 
     public Account() {
@@ -55,6 +54,14 @@ public class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
 

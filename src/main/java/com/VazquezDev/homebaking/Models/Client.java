@@ -1,9 +1,9 @@
 package com.VazquezDev.homebaking.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Client {
@@ -12,6 +12,9 @@ public class Client {
     private String id;
 
     private String name,lastName,email,password;
+    @OneToMany(mappedBy = "client",fetch = FetchType.EAGER)
+    private Set<Account> accounts = new HashSet<>();//genera un espacio de referencia
+
 
     public Client() {
     }
@@ -59,4 +62,15 @@ public class Client {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void addAccount (Account account){
+        account.setClient(this);
+        this.accounts.add(account);
+
+    }
+
 }
