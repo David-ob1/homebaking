@@ -37,7 +37,7 @@ public class ClientController {
     }
 
     @GetMapping("/all")
-    public List<Client> getAll(){return clientRepository.findAll();}
+    public List<Client> getClients(){return clientRepository.findAll();}
 
 
 
