@@ -1,5 +1,6 @@
 package com.VazquezDev.homebaking.Controllers;
 
+import com.VazquezDev.homebaking.DTO.ClientDTO;
 import com.VazquezDev.homebaking.DTO.NewClient;
 import com.VazquezDev.homebaking.Models.Client;
 import com.VazquezDev.homebaking.Repositories.ClientRepository;
@@ -11,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/client")
@@ -37,7 +39,16 @@ public class ClientController {
     }
 
     @GetMapping("/all")
-    public List<Client> getClients(){return clientRepository.findAll();}
+    public List<ClientDTO> getClients(){
+
+        List <ClientDTO> clients = clientRepository.findAll()
+                    .stream()
+                    .map(client -> new ClientDTO(client)).collect(Collectors.toList());
+
+
+        return clients;
+
+    }
 
 
 

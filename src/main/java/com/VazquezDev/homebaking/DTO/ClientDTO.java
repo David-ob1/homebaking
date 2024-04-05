@@ -42,4 +42,7 @@ public class ClientDTO {
         return email;
     }
 
+    public List<AccountDTO> getAccounts() {
+        return accounts;
+    }
 }
