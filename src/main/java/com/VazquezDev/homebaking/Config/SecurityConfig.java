@@ -25,7 +25,7 @@ public class SecurityConfig {
                         .requestMatchers("/web/img/**").permitAll()
                         .requestMatchers("/web/login.html","/web/assets/**","/web/script/login.js").permitAll()
                         .requestMatchers(HttpMethod.POST,"/api/client/new","/api/client/current").permitAll()
-                        .requestMatchers("/h2-console/**").permitAll()
+                        .requestMatchers("/h2-console/**","/api/**").permitAll()
 
                         .anyRequest().authenticated())
 

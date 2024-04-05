@@ -38,12 +38,11 @@ public class HomebakingApplication {
 
 		Account account1 = new Account("VIN001", LocalDate.now(),20000);
 		melba.addAccount(account1);
-
 		accountRepository.save(account1);
 
 		Account account2 = new Account("VIN002",LocalDate.now().plusDays(1),7500);
-
-
+		melba.addAccount(account2);
+		accountRepository.save(account2);
 	};
 
 	}
