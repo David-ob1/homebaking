@@ -1,5 +1,6 @@
 package com.VazquezDev.homebaking.Controllers;
 
+import com.VazquezDev.homebaking.DTO.AccountDTO;
 import com.VazquezDev.homebaking.Models.Account;
 import com.VazquezDev.homebaking.Repositories.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,16 @@ public class AccountController {
     }
 
     @GetMapping("/accounts/{id}")
-    public ResponseEntity<Object> getAccount(@PathVariable UUID id){
-        return new ResponseEntity<>("ok", HttpStatus.OK);
+    public ResponseEntity<Object> getAccount(@PathVariable String id){
+
+         Account account = accountRepository.findAccountById(id);
+
+         if (account != null){
+             return new ResponseEntity<>(new AccountDTO(account), HttpStatus.OK);
+         }else{
+             return new ResponseEntity<>("Account not found", HttpStatus.OK);
+         }
+
     }
 
 
