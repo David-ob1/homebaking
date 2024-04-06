@@ -56,26 +56,34 @@ body{
     opacity: 1;
     filter: blur(0);
     transition:  .7s ease;
+    transition-delay: calc(.1s * var(--j));
+
 } 
 
 .wrapper.active .form-box.login .animation {
     transform:  translateX(-120%);
     opacity: 0;
     filter: blur(10px);
-    transition-delay: calc(.1s * var(--i)) ;
+    transition-delay: calc(.1s * var(--i));
 } 
 
 .wrapper .form-box.register{
     right: 0;
     padding: 0 40px 0 60px;
-    /* display: none; */
+    pointer-events: none;
 }
+.wrapper.active .form-box.register{
+    pointer-events: auto ;
+
+}
+
 
 .wrapper .form-box.register .animation{
  transform: translateX(120%);
  opacity: 0;
  filter: blur(10px);
  transition: .7s ease;
+ transition-delay:calc(.1s * var(--j)) ;
 
 }
 .wrapper.active .form-box.register .animation{
@@ -231,6 +239,8 @@ color: #0ef;
     opacity: 1;
     filter: blur(0);
     transition:  .7s ease;
+    transition-delay: calc(.1s * var(--j));
+
 } 
 
 .wrapper.active .info-text.login .animation {
@@ -253,7 +263,20 @@ color: #0ef;
 
 .wrapper .info-text.register .animation{
     transform: translateX(-120%);
+    transition: .7s ease;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay:calc(.1s * var(--j)) ;
 }
+
+.wrapper.active .info-text.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter:blur(0);
+    transition-delay:calc(.1s * var(--i)) ;
+
+}
+
 
 
 .info-text h2{
@@ -281,6 +304,7 @@ background: linear-gradient(45deg,#081b29,#0ef);
 transform: rotate(10deg) skewY(40deg);
 transform-origin:bottom right;
     transition: 1.5s ease;
+    transition-delay:1.6s ;
 }
 
 .wrapper.active .bg-animate {
@@ -300,6 +324,7 @@ transform-origin:bottom right;
     transform: rotate(0) skewY(0);
     transform-origin:bottom left;
     transition: 1.5s ease;
+    transition-delay:.5s ;
 }
 
     .wrapper.active .bg-animate2{
