@@ -14,8 +14,11 @@ body{
     min-height: 100vh;
     width: 100%;
     padding: 0 10px;
-    background:url(../img/Oceanic.jpeg) #000;
-    background-position: 80% ;
+    /* background:url(../img/logig2.png) #000; */
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+     rgba(0, 0, 0, .4)), url(../img/logig2.png);
+  
     background-size: cover;
 }
 
@@ -45,16 +48,43 @@ body{
 
 .wrapper .form-box.login{
     left: 0;
-    padding: 0 60px 0 40px;
-    display: none;
+    padding: 0 60px 0 40px; 
 }
+
+.wrapper .form-box.login .animation {
+    transform:  translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition:  .7s ease;
+} 
+
+.wrapper.active .form-box.login .animation {
+    transform:  translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--i)) ;
+} 
 
 .wrapper .form-box.register{
     right: 0;
     padding: 0 40px 0 60px;
-    display: none;
-    
+    /* display: none; */
 }
+
+.wrapper .form-box.register .animation{
+ transform: translateX(120%);
+ opacity: 0;
+ filter: blur(10px);
+ transition: .7s ease;
+
+}
+.wrapper.active .form-box.register .animation{
+ transform: translateX(0);
+ opacity: 1;
+ filter: blur(0);
+ transition-delay:calc(.1s * var(--i)) ;
+}
+
 
 .form-box h2 {
     font-size: 32px;
@@ -196,11 +226,33 @@ color: #0ef;
 
 }
 
+.wrapper .info-text.login .animation {
+    transform:  translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition:  .7s ease;
+} 
+
+.wrapper.active .info-text.login .animation {
+    transform:  translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay:calc(.1s * var(--i)) ;
+} 
+
+
+
 .wrapper .info-text.register{
     padding: 0 150px 60px 40px;
     left: 0;
     text-align: left;
-    display: none;
+    /* display: none; */
+    pointer-events: none;
+
+}
+
+.wrapper .info-text.register .animation{
+    transform: translateX(-120%);
 }
 
 
@@ -227,12 +279,15 @@ height: 600px;
 border-bottom: 3px solid #0ef;
 background: linear-gradient(45deg,#081b29,#0ef);
 transform: rotate(10deg) skewY(40deg);
-/* transform: rotate(0deg) skewY(0deg); */
-
 transform-origin:bottom right;
-
+    transition: 1.5s ease;
 }
 
+.wrapper.active .bg-animate {
+    transform: rotate(0deg) skewY(0deg);
+    transition-delay:.5s ;
+
+}
 
 .wrapper .bg-animate2{
     position: absolute;
@@ -242,9 +297,12 @@ transform-origin:bottom right;
     height: 700px;
     border-top: 3px solid #0ef;
     background: #081b29;
-    /* transform: rotate(-11deg) skewY(-40deg);  */
     transform: rotate(0) skewY(0);
-    
     transform-origin:bottom left;
-    
+    transition: 1.5s ease;
+}
+
+    .wrapper.active .bg-animate2{
+        transform: rotate(-11deg) skewY(-40deg); 
+        transition-delay:1.2s ;
     }
