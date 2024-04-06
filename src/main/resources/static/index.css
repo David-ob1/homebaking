@@ -10,6 +10,8 @@
     background-color:var(--color-hv) ;
 }
 :root{
+        --color-efect:#0ef;
+        --color-contrast:  #081b29;
     --nav-bg:#1c2754;
     --color-hv:#17acc9;
     --bg-primary:#080c2b;            
@@ -62,13 +64,18 @@ p{
    
     transition: .3s;
 }
-
+.logout p {
+    transition: .3s;
+}
 .logout i{
     font-size: 27px;
     margin-right: 8px;
+    transition: .3s;
+
 }
 
-.logout:hover , nav i:hover{
+.logout:hover p, .logout:hover i{
+ 
     
     color: #17acc9;
 }
@@ -104,9 +111,6 @@ padding: 3rem;
     /* border: 3px solid red; */
 }
 .services{
-
     background: var(--bg-primary);
-    
-
    
 }
