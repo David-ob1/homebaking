@@ -39,7 +39,6 @@ public class SecurityConfig {
                         .usernameParameter("email")
                         .passwordParameter("password")
                         .successHandler((request, response, authentication) -> clearAuthenticationAttributes(request))
-                        .successHandler((request, response, authentication) -> clearAuthenticationAttributes(request))
                         .failureHandler((request, response, exception) -> response.sendError(403)))
                 .exceptionHandling(exceptionHandlingConfigurer ->
                         exceptionHandlingConfigurer.authenticationEntryPoint((request, response, authException) ->  response.sendError(403)))

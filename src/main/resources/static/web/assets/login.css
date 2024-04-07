@@ -256,9 +256,12 @@ color: #0ef;
     padding: 0 150px 60px 40px;
     left: 0;
     text-align: left;
-    /* display: none; */
     pointer-events: none;
 
+}
+
+.wrapper.active .info-text.register{
+    pointer-events: auto;
 }
 
 .wrapper .info-text.register .animation{
