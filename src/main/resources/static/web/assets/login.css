@@ -25,7 +25,7 @@ body{
 .wrapper{
     position:relative;
     width: 750px;
-    height: 450px;
+    height: 550px;
     background: transparent;
     border: 2px solid #0ef;
     overflow: hidden;
@@ -304,7 +304,7 @@ width: 850px;
 height: 600px;
 border-bottom: 3px solid #0ef;
 background: linear-gradient(45deg,#081b29,#0ef);
-transform: rotate(10deg) skewY(40deg);
+transform: rotate(0deg) skewY(45deg);
 transform-origin:bottom right;
     transition: 1.5s ease;
     transition-delay:1.6s ;
@@ -331,6 +331,6 @@ transform-origin:bottom right;
 }
 
     .wrapper.active .bg-animate2{
-        transform: rotate(-11deg) skewY(-40deg); 
+        transform: rotate(-16deg) skewY(-40deg); 
         transition-delay:1.2s ;
     }
