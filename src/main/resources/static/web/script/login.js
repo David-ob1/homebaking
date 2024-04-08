@@ -57,9 +57,8 @@ const btnRegister = document.getElementById("register")
   let email = document.getElementById("email")
   let password = document.getElementById("password")
 
-  btnRegister.addEventListener("click",e =>{
-    e.preventDefault()
-
+  btnRegister.addEventListener("click",() =>{
+   
     let newClient = registerValues()
 
     axios.post(registerEP,newClient)
@@ -69,12 +68,13 @@ const btnRegister = document.getElementById("register")
 
     let auth = `email=${newClient.email}&password=${newClient.password}`
             axios.post(loginEP,auth)
-
             console.log("login")
             setTimeout(() => {
-            location.href = '../index.html';
+            // location.href = '../index.html';
+            alert("hola")
+
             console.log("Retrasado por 2 segundo.");
-            }, 2000);
+            }, 3000);
 
 
         })

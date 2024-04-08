@@ -55,13 +55,12 @@ nav{
 p{
     margin: 0;
 }
-.logout{
+#logout{
     display: flex;
     align-items: center;
     border: none;
     background: none;
     /* gap: 5px; */
-   
     transition: .3s;
 }
 .logout p {
@@ -75,8 +74,6 @@ p{
 }
 
 .logout:hover p, .logout:hover i{
- 
-    
     color: #17acc9;
 }
 
