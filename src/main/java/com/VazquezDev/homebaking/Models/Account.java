@@ -69,6 +69,18 @@ public class Account {
     public void setClient(Client client) {
         this.client = client;
     }
+
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void addTransactions (Transaction transaction){
+        transaction.setAccount(this);
+        this.transactions.add(transaction);
+    }
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
+    }
 }
 
 

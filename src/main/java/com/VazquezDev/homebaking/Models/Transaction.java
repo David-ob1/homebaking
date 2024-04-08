@@ -1,5 +1,6 @@
 package com.VazquezDev.homebaking.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -8,9 +9,9 @@ import java.time.LocalDate;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    private String type;
+    private TransactionType type;
 
     private double amount;
     private String description;
@@ -23,7 +24,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(String type, double amount, String description, LocalDate date) {
+    public Transaction(TransactionType type, double amount, String description, LocalDate date) {
         this.type = type;
         this.amount = amount;
         this.description = description;
@@ -34,11 +35,12 @@ public class Transaction {
         return id;
     }
 
-    public String getType() {
+
+    public TransactionType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TransactionType type) {
         this.type = type;
     }
 
@@ -65,4 +67,13 @@ public class Transaction {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+    @JsonIgnore
+    public Account getAccount() {
+        return account;
+    }
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+
 }

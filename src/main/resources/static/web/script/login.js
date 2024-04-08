@@ -65,11 +65,16 @@ const btnRegister = document.getElementById("register")
     axios.post(registerEP,newClient)
         .then(data => {
             console.log(data)
+            console.log("register")
 
+    let auth = `email=${newClient.email}&password=${newClient.password}`
+            axios.post(loginEP,auth)
+
+            console.log("login")
             setTimeout(() => {
             location.href = '../index.html';
-            console.log("Retrasado por 1 segundo.");
-            }, 1000);
+            console.log("Retrasado por 2 segundo.");
+            }, 2000);
 
 
         })
