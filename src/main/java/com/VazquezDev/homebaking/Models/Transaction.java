@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
     private TransactionType type;
 
@@ -31,7 +31,7 @@ public class Transaction {
         this.date = date;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

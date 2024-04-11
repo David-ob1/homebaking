@@ -51,6 +51,16 @@ public class ClientController {
     }
 
 
+    @GetMapping("{id}")
+    public ResponseEntity<Object> getClient(@PathVariable String id){
+        Client client = clientRepository.findClientById(id);
 
+    if (client != null){
+        return new ResponseEntity<>(new ClientDTO(client),HttpStatus.OK);
+    }else {
+    return new ResponseEntity<>("User not found",HttpStatus.FORBIDDEN);
+    }
+
+    }
 
 }
