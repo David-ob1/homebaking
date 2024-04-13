@@ -39,7 +39,7 @@ public class ClientController {
     }
 
     @GetMapping("/all")
-    public List<ClientDTO> getClients(){
+    public List<ClientDTO> getAllClients(){
 
         List <ClientDTO> clients = clientRepository.findAll()
                     .stream()
