@@ -15,25 +15,26 @@
     --nav-bg:#1c2754;
     --color-hv:#17acc9;
     --bg-primary:#080c2b;            
-    --bg-section:#1c2754;
     --bg-secondary:#080d36;
-    --bg-scroll:#004480;
+    /* --bg-scroll:#004480; */
     
 }
 .layout{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--nav-bg);
 }
 
 body::-webkit-scrollbar {
     width: 12px; /* Ancho del scrollbar */
-    background-color: var(--bg-scroll); 
+    background-color: var(--bg-secondary); 
     /* color: red; */
   }
 
   body::-webkit-scrollbar-thumb {
-    background-color: var(--color-hv); /* Color del thumb */
+    background-color: var(--color-hv);
+     /* Color del thumb */
     border-radius: 5px; /* Radio de borde del thumb */
 
   }
@@ -89,8 +90,12 @@ nav i {
 }
 
 .pre-info-container{
+    display: flex;
 background-color: var(--color-contrast);
 padding: 3rem;
+flex-direction: column;
+align-items: center;
+gap: .8rem;
 
 }
 
@@ -160,6 +165,7 @@ flex-direction: column;
 text-align: center;
 /* gap: .2rem; */
 font-size: 17px;
+border: 1px solid var(--bg-secondary);
 
 }
 
@@ -185,3 +191,22 @@ font-size: 17px;
     font-size: 25px!important;
 }
 
+.new-account{
+    background-color:var(--color-hv);
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    border: .5px solid var(--bg-secondary);
+    box-shadow: 0 0 8px rgba(218, 215, 215, 0.6) ;
+
+}
+
+.t-head{
+    text-align: center;
+    background-color: var(--nav-bg)!important;
+    color: white!important;
+}
+
+footer{
+    background-color: black;
+}
