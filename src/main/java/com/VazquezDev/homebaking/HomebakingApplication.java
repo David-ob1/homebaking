@@ -54,8 +54,17 @@ public class HomebakingApplication {
 		nicolas.addAccount(account3);
 		accountRepository.save(account3);
 
-//		Transaction transaction = new Transaction(TransactionType.DEBIT,1000,"shop",LocalDate.now());
+		Transaction transaction1 = new Transaction(TransactionType.DEBIT,1000,"shop",LocalDate.now());
+		account2.addTransactions(transaction1);
+		transactionRepository.save(transaction1);
 
+		Transaction transaction2 = new Transaction(TransactionType.CREDIT,200,"bonus",LocalDate.now());
+		account2.addTransactions(transaction2);
+		transactionRepository.save(transaction2);
+
+		Transaction transaction3 = new Transaction(TransactionType.CREDIT,900,"salary",LocalDate.now());
+		account2.addTransactions(transaction3);
+		transactionRepository.save(transaction3);
 	};
 
 	}
