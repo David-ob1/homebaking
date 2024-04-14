@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/client")
+@RequestMapping("/api/clients")
 public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
@@ -25,7 +25,6 @@ public class ClientController {
 
     @PostMapping("/new")
     public ResponseEntity<String> addClient (@RequestBody NewClient newClient){
-
 
         if(clientRepository.existsByEmail(newClient.email())){
             return new ResponseEntity<>("Email already in use",HttpStatus.FORBIDDEN);
