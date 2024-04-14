@@ -2,7 +2,7 @@
 const  wrapper = document.querySelector(".wrapper")
 const  registerLink = document.querySelector(".register-link")
 const  loginLink = document.querySelector(".login-link")
-
+const loader = document.getElementById("loader")
 
 registerLink.onclick = ()=>{
     wrapper.classList.add("active")
@@ -30,6 +30,10 @@ const btnRegister = document.getElementById("register")
 
  btnLogin.addEventListener("click",()=>{
 
+    loader.style.display = "flex"
+
+
+
     let auth = `email=${emailL.value}&password=${passwordL.value}`
     axios.post(loginEP,auth)
         .then(data =>{
@@ -42,11 +46,20 @@ const btnRegister = document.getElementById("register")
 
         })
         .catch(error => {
-            console.log(loginValues ())
+            console.log(emailL.value)
+            console.log(passwordL.value)
+
             error   
         }
             
             )
+
+    setTimeout(() => {
+         loader.style.display = "none"
+
+        }, 600);
+
+
 
  })
  
@@ -59,6 +72,9 @@ const btnRegister = document.getElementById("register")
   let password = document.getElementById("password")
 
   btnRegister.addEventListener("click",() =>{
+
+    loader.style.display = "flex"
+
    
     let newClient = registerValues()
 
@@ -66,20 +82,29 @@ const btnRegister = document.getElementById("register")
         .then(data => {
             console.log(data)
             console.log("register")
+    loader.style.display = "none"
+
 
     let auth = `email=${newClient.email}&password=${newClient.password}`
             axios.post(loginEP,auth)
             console.log("login")
             setTimeout(() => {
             // location.href = '../index.html';
+             loader.style.display = "none"
+
             alert("hola")
 
             console.log("Retrasado por 2 segundo.");
-            }, 3000);
+            }, 1000);
 
 
         })
         .catch(error => console.log(error))
+
+        setTimeout(() => {
+            loader.style.display = "none"
+   
+           }, 300);
   })
 
 

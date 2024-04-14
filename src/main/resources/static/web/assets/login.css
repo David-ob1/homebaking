@@ -79,7 +79,7 @@ body{
 
 
 .wrapper .form-box.register .animation{
- transform: translateX(120%);
+ transform: translateX(250%);
  opacity: 0;
  filter: blur(10px);
  transition: .7s ease;
@@ -265,7 +265,7 @@ color: #0ef;
 }
 
 .wrapper .info-text.register .animation{
-    transform: translateX(-120%);
+     transform: translateX(-250%); /* modificar */
     transition: .7s ease;
     filter: blur(10px);
     transition: .7s ease;
@@ -334,3 +334,36 @@ transform-origin:bottom right;
         transform: rotate(-16deg) skewY(-40deg); 
         transition-delay:1.2s ;
     }
+
+
+    .spinner-container{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+    }
+    
+.spinner{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    /* background: red; */
+    border:8px solid transparent ;
+    border-radius:50%;
+    /* border:6.4px solid #fff ; */
+    border-left-color:#0ef;
+    border-right-color:#0ef;
+    /* box-shadow: 0 0 10px #7f0099; */
+    animation: animateSpin .8s ease-in-out infinite;
+}
+
+@keyframes animateSpin {
+    100%{
+        transform: rotate(360deg);
+    }
+}
