@@ -38,8 +38,11 @@ const btnRegister = document.getElementById("register")
     axios.post(loginEP,auth)
         .then(data =>{
             console.log(data)
+
+            alert()
             
             setTimeout(() => {
+                loader.style.display = "none"
                 location.href = '../index.html';
                 console.log("Retrasado por 1 segundo.");
                 }, 1000);
@@ -47,9 +50,11 @@ const btnRegister = document.getElementById("register")
         })
         .catch(error => {
             console.log(emailL.value)
-            console.log(passwordL.value)
+            console.log(passwordL.value )
 
-            error   
+           alert(error)
+
+           loader.style.display = "none"
         }
             
             )
@@ -88,12 +93,15 @@ const btnRegister = document.getElementById("register")
     let auth = `email=${newClient.email}&password=${newClient.password}`
             axios.post(loginEP,auth)
             console.log("login")
+
+            // alert("hola")
+
+
             setTimeout(() => {
-            // location.href = '../index.html';
-             loader.style.display = "none"
-
-            alert("hola")
-
+                loader.style.display = "none"
+                
+                
+                // location.href = '../index.html';
             console.log("Retrasado por 2 segundo.");
             }, 1000);
 
