@@ -1,9 +1,9 @@
 package com.VazquezDev.homebaking.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Loan {
@@ -14,6 +14,8 @@ public class Loan {
 
     private String name;
     private double maxAmount;
+    @ManyToMany(mappedBy = "loans",fetch = FetchType.EAGER)
+    private Set<Client> clients = new HashSet<>();
 
 
     public Loan() {
@@ -40,6 +42,13 @@ public class Loan {
         this.maxAmount = maxAmount;
     }
 
+    public Set<Client> getClients() {
+        return clients;
+    }
 
+    public void setClients(Set<Client> clients) {
+        this.clients = clients;
+    }
 
+    public void a
 }
