@@ -16,7 +16,7 @@ public class Client {
     private Set<Account> accounts = new HashSet<>();//genera un espacio de referencia
 
     @OneToMany(mappedBy = "client",fetch = FetchType.EAGER)
-    private Set<Loan> clientLoans = new HashSet<>();
+    private Set<ClientLoan> clientLoans = new HashSet<>();
 
 
     public Client() {
@@ -76,6 +76,16 @@ public class Client {
 
     }
 
+    //le indico al prestamo le agrego el cliente
+    //y al cliente le agrego el prestamo
+    public void addClientLoan (ClientLoan clientLoan){
+        clientLoan.setClient(this);
+        this.clientLoans.add(clientLoan);
+
+    }
+    public Set<ClientLoan> getClientLoans() {
+        return clientLoans;
+    }
 
 
 

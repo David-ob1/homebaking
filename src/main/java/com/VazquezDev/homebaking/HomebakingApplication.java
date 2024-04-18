@@ -64,16 +64,35 @@ public class HomebakingApplication {
 		transactionRepository.save(transaction3);
 
 	//defino las listas de element Collection
-		List<Integer> paymentMorgage =List.of(12,24,36,48,60);
+		List<Integer> paymentMorgage = List.of(12,24,36,48,60);
 		List <Integer> paymetPersonal = List.of(6,12,24);
 		List <Integer> paymetAutomotive = List.of(6,12,24,36);
 
-//el ultimo valor viene de la lista de arriba que seria el @ElementC
+	//el ultimo valor viene de la lista de arriba que seria el @ElementC
 	Loan Morgage = new Loan("Morgage",500000,paymentMorgage);
+	loanRepository.save(Morgage);
+
 	Loan Personal = new Loan("Personal",100.000,paymetPersonal);
+	loanRepository.save(Personal);
+
 	Loan Automotive = new Loan("Automotive",300.000,paymetAutomotive);
+	loanRepository.save(Automotive);
 
 
+	//creamos el clientLoan y despues asociamos
+	ClientLoan client1LoanA = new ClientLoan(400.000,60);
+
+	//con el cliente
+	melba.addClientLoan(client1LoanA);
+	//con los prestamos
+	Morgage.addClientLoan(client1LoanA);
+	//y luego lo guardamos en el repositorio
+	clientLoandRepository.save(client1LoanA);
+
+	ClientLoan client1LoanB = new ClientLoan(50.000,12 );
+	melba.addClientLoan(client1LoanB);
+	Personal.addClientLoan(client1LoanB);
+	clientLoandRepository.save(client1LoanB);
 
 
 	};
