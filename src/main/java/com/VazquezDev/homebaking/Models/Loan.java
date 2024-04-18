@@ -3,6 +3,7 @@ package com.VazquezDev.homebaking.Models;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -14,11 +15,21 @@ public class Loan {
 
     private String name;
     private double maxAmount;
+
+    @ElementCollection
+    private List<Integer> payments;
+
     @OneToMany(mappedBy = "loans",fetch = FetchType.EAGER)
     private Set<Client> clients = new HashSet<>();
 
 
     public Loan() {
+    }
+
+    public Loan(String name, double maxAmount, List<Integer> payments) {
+        this.name = name;
+        this.maxAmount = maxAmount;
+        this.payments = payments;
     }
 
     public Long getId() {
