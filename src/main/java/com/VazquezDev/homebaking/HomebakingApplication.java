@@ -1,12 +1,7 @@
 package com.VazquezDev.homebaking;
 
-import com.VazquezDev.homebaking.Models.Account;
-import com.VazquezDev.homebaking.Models.Client;
-import com.VazquezDev.homebaking.Models.Transaction;
-import com.VazquezDev.homebaking.Models.TransactionType;
-import com.VazquezDev.homebaking.Repositories.AccountRepository;
-import com.VazquezDev.homebaking.Repositories.ClientRepository;
-import com.VazquezDev.homebaking.Repositories.TransactionRepository;
+import com.VazquezDev.homebaking.Models.*;
+import com.VazquezDev.homebaking.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
-
+import java.util.List;
 
 
 @SpringBootApplication
@@ -30,7 +25,9 @@ public class HomebakingApplication {
 	@Bean
 	public CommandLineRunner initDat(ClientRepository clientRepository
 									, AccountRepository accountRepository
-									, TransactionRepository transactionRepository){
+									, TransactionRepository transactionRepository
+									, LoanRepository loanRepository
+									, ClientLoandRepository clientLoandRepository){
 
 	return args -> {
 
@@ -65,6 +62,20 @@ public class HomebakingApplication {
 		Transaction transaction3 = new Transaction(TransactionType.CREDIT,900,"salary",LocalDate.now());
 		account2.addTransactions(transaction3);
 		transactionRepository.save(transaction3);
+
+	//defino las listas de element Collection
+		List<Integer> paymentMorgage =List.of(12,24,36,48,60);
+		List <Integer> paymetPersonal = List.of(6,12,24);
+		List <Integer> paymetAutomotive = List.of(6,12,24,36);
+
+//el ultimo valor viene de la lista de arriba que seria el @ElementC
+	Loan Morgage = new Loan("Morgage",500000,paymentMorgage);
+	Loan Personal = new Loan("Personal",100.000,paymetPersonal);
+	Loan Automotive = new Loan("Automotive",300.000,paymetAutomotive);
+
+
+
+
 	};
 
 	}
