@@ -14,6 +14,7 @@ public class ClientDTO {
 
     private List<AccountDTO> accounts;
 
+    private List<ClientLoanDTO> loans;
 
     public ClientDTO(Client client){
         id=client.getId();
@@ -24,6 +25,8 @@ public class ClientDTO {
                 .stream()
                 .map(account -> new AccountDTO(account) )
                 .collect(Collectors.toList());
+
+
     }
 
     public String getId() {

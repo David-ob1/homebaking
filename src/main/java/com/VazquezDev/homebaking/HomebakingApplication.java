@@ -95,6 +95,14 @@ public class HomebakingApplication {
 	clientLoandRepository.save(client1LoanB);
 
 
+	ClientLoan client2LoanA = new ClientLoan(100.000,24);
+	nicolas.addClientLoan(client2LoanA);
+	Personal.addClientLoan(client2LoanA);
+
+	ClientLoan client2LoanB = new ClientLoan(200.000,36 );
+	nicolas.addClientLoan(client2LoanB);
+	Automotive.addClientLoan(client2LoanB);
+
 	};
 
 	}
