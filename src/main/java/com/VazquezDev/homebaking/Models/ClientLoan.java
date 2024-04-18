@@ -1,9 +1,6 @@
 package com.VazquezDev.homebaking.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class ClientLoan {
@@ -16,14 +13,22 @@ public class ClientLoan {
 
     private int payments;
 
+    @ManyToOne(fetch = FetchType.EAGER)
     private Client client;
-
+    @ManyToOne(fetch = FetchType.EAGER)
     private Loan loan;
 
     public ClientLoan() {
     }
 
-    
+    public ClientLoan(double amount, int payments) {
+        this.amount = amount;
+        this.payments = payments;
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     public double getAmount() {
         return amount;
@@ -57,5 +62,6 @@ public class ClientLoan {
         this.loan = loan;
     }
 
-    
+
+
 }

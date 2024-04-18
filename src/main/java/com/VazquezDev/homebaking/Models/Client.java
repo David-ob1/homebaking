@@ -15,8 +15,8 @@ public class Client {
     @OneToMany(mappedBy = "client",fetch = FetchType.EAGER)
     private Set<Account> accounts = new HashSet<>();//genera un espacio de referencia
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Loan> loans = new HashSet<>();
+    @OneToMany(mappedBy = "client",fetch = FetchType.EAGER)
+    private Set<Loan> clientLoans = new HashSet<>();
 
 
     public Client() {
@@ -76,13 +76,7 @@ public class Client {
 
     }
 
-    public Set<Loan> getLoans() {
-        return loans;
-    }
 
-    public void setLoans(Set<Loan> loans) {
-        this.loans = loans;
-    }
 
 
 }
