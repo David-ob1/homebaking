@@ -210,3 +210,36 @@ border: 1px solid var(--bg-secondary);
 footer{
     background-color: black;
 }
+
+
+.loan__container{
+    padding: 1rem;
+    background: var(--bg-secondary);
+}
+
+.loan__content{
+    padding: .5rem;
+    /* background-color: var(--color-contrast); */
+    /* background-color: #0D47A1; */
+    /* background-color: #310aa5; */
+    /* background-color: #081b29; */
+    /* background: radial-gradient(ellipse at center top, #0D47A1, #081b29); */
+    background: linear-gradient(to bottom, #0D47A1, #081b29);
+    height: 10rem;
+    border-radius: 10px;
+}
+
+/* .table-loan{
+    width: 100%;
+    background-color: transparent!important;
+    display: flex;
+    flex-direction: column;
+
+} */
+
+.loan-item{
+    background-color: transparent!important;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-bottom-width:.5px!important ;
+}
