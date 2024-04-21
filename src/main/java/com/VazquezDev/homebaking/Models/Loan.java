@@ -19,7 +19,7 @@ public class Loan {
     @ElementCollection
     private List<Integer> payments;
 
-    @OneToMany(mappedBy = "loans",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "loan",fetch = FetchType.EAGER)
     private Set<ClientLoan> clientLoans = new HashSet<>();
 
 

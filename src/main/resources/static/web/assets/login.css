@@ -17,7 +17,7 @@ body{
     /* background:url(../img/logig2.png) #000; */
     /* background-color: rgba(255, 255, 255, 0.5); */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-     rgba(0, 0, 0, .4)), url(../img/logig2.png);
+     rgba(0, 0, 0, .4)), url(../img/login.jpg);
   
     background-size: cover;
 }
