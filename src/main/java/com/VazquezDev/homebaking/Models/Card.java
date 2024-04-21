@@ -1,9 +1,6 @@
 package com.VazquezDev.homebaking.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -26,6 +23,9 @@ public class Card {
     private LocalDate fromDate;
 
     private LocalDate thruDate;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Client client;
 
 
     public Card() {
@@ -100,5 +100,14 @@ public class Card {
 
     public void setThruDate(LocalDate thruDate) {
         this.thruDate = thruDate;
+    }
+
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
