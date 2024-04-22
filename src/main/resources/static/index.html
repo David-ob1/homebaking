@@ -14,16 +14,49 @@
 
         <header>
             <nav>
-                <button id="logout">
-                    <i class="bi bi-box-arrow-left"></i>
-                    <p>logout</p>
-                </button>
+              <i class="bi bi-list"data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></i>
               
-                <img src="./web/img/—Pngtree—vector bank icon_4101273.png" alt="">
+              <!-- <i class="bi bi-person-fill"></i> -->
+               <!-- <p id="hide"> </p> -->
+           
 
-               <!-- <i class="bi bi-list"></i> -->
-               <i class="bi bi-person-fill"></i>
+
+              
+              <img src="./web/img/—Pngtree—vector bank icon_4101273.png" alt="">
+              
+              
+
+               <!-- <button id="logout">
+                <i class="bi bi-box-arrow-left"></i>
+                <p>logout</p>
+            </button> -->
+
+            <button id="logout">
+              <i class="bi bi-person-circle"></i>
+              <p>Log in</p>
+          </button>
+
+          <div class="offcanvas offcanvas-start " 
+          data-bs-scroll="true" tabindex="-1" 
+          id="offcanvasWithBothOptions" 
+          aria-labelledby="offcanvasWithBothOptionsLabel">
+
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+              <button type="button" class="close" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="bi bi-x-lg"></i>
+              </button>
+
+            </div>
+            <div class="offcanvas-body">
+              <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+          </div>
+
+
             </nav>
+
+
         </header>
         <main class="main flex-grow-1">
             
@@ -105,6 +138,7 @@
         </main>
 
         <footer>
+         
 
         </footer>
 
