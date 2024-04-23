@@ -90,6 +90,7 @@ nav{
     font-size: 20px;
     /* gap:1rem; */
     justify-content: space-between;
+    /* align-items: center; */
     text-align: center;
     padding: 0;
 }
@@ -111,7 +112,7 @@ nav{
 p{
     margin: 0;
 }
-#logout{
+.logout{
     display: flex;
     align-items: center;
     border: none;
@@ -121,11 +122,12 @@ p{
     /* border: 1px solid white; */
 }
 .logout p {
+    font-size: 20px;
     transition: .3s;
 }
 .logout i{
     font-size: 27px;
-    margin-right: 8px;
+    margin-right: 3px;
     transition: .3s;
 
 }
