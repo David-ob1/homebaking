@@ -1,5 +1,6 @@
 package com.VazquezDev.homebaking.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -45,7 +46,7 @@ public class ClientLoan {
     public void setPayments(int payments) {
         this.payments = payments;
     }
-
+    @JsonIgnore
     public Client getClient() {
         return client;
     }

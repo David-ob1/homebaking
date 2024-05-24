@@ -1,5 +1,6 @@
 package com.VazquezDev.homebaking.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -13,7 +14,7 @@ public class Card {
 
     private Client cardHolder;
 
-    private CardType cardType;
+//    private CardType cardType;
     private CardColor cardColor;
 
     private String number;
@@ -31,9 +32,9 @@ public class Card {
     public Card() {
     }
 
-    public Card(Client cardHolder, CardType cardType, CardColor cardColor, String number, String cvv, LocalDate fromDate, LocalDate thruDate) {
+    public Card(Client cardHolder, CardColor cardColor, String number, String cvv, LocalDate fromDate, LocalDate thruDate) {
         this.cardHolder = cardHolder;
-        this.cardType = cardType;
+//        this.cardType = cardType;
         this.cardColor = cardColor;
         this.number = number;
         this.cvv = cvv;
@@ -54,13 +55,6 @@ public class Card {
         this.cardHolder = cardHolder;
     }
 
-    public CardType getCardType() {
-        return cardType;
-    }
-
-    public void setCardType(CardType cardType) {
-        this.cardType = cardType;
-    }
 
     public CardColor getCardColor() {
         return cardColor;
@@ -102,7 +96,7 @@ public class Card {
         this.thruDate = thruDate;
     }
 
-
+    @JsonIgnore
     public Client getClient() {
         return client;
     }

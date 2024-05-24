@@ -83,25 +83,25 @@ public class HomebakingApplication {
 	ClientLoan client1LoanA = new ClientLoan(400.000,60);
 
 	//con el cliente
-	melba.addClientLoan(client1LoanA);
-	//con los prestamos
-	Morgage.addClientLoan(client1LoanA);
-	//y luego lo guardamos en el repositorio
-	clientLoandRepository.save(client1LoanA);
-
-	ClientLoan client1LoanB = new ClientLoan(50.000,12 );
-	melba.addClientLoan(client1LoanB);
-	Personal.addClientLoan(client1LoanB);
-	clientLoandRepository.save(client1LoanB);
-
-
-	ClientLoan client2LoanA = new ClientLoan(100.000,24);
-	nicolas.addClientLoan(client2LoanA);
-	Personal.addClientLoan(client2LoanA);
-
-	ClientLoan client2LoanB = new ClientLoan(200.000,36 );
-	nicolas.addClientLoan(client2LoanB);
-	Automotive.addClientLoan(client2LoanB);
+//	melba.addClientLoan(client1LoanA);
+//	//con los prestamos
+//	Morgage.addClientLoan(client1LoanA);
+//	//y luego lo guardamos en el repositorio
+//	clientLoandRepository.save(client1LoanA);
+//
+//	ClientLoan client1LoanB = new ClientLoan(50.000,12 );
+//	melba.addClientLoan(client1LoanB);
+//	Personal.addClientLoan(client1LoanB);
+//	clientLoandRepository.save(client1LoanB);
+//
+//
+//	ClientLoan client2LoanA = new ClientLoan(100.000,24);
+//	nicolas.addClientLoan(client2LoanA);
+//	Personal.addClientLoan(client2LoanA);
+//
+//	ClientLoan client2LoanB = new ClientLoan(200.000,36 );
+//	nicolas.addClientLoan(client2LoanB);
+//	Automotive.addClientLoan(client2LoanB);
 
 	};
 

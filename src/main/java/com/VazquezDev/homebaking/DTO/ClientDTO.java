@@ -27,9 +27,9 @@ public class ClientDTO {
                 .stream()
                 .map(account -> new AccountDTO(account) )
                 .collect(Collectors.toList());
-        loans = client.getClientLoans()
-                .stream()
-                .map(clientLoan -> new ClientLoanDTO(clientLoan)).collect(Collectors.toList());
+//        loans = client.getClientLoans()
+//                .stream()
+//                .map(clientLoan -> new ClientLoanDTO(clientLoan)).collect(Collectors.toList());
 //        cards = clent.get
 
     }
@@ -58,7 +58,7 @@ public class ClientDTO {
         return loans;
     }
 
-    public List<CardDTO> getCards() {
-        return cards;
-    }
+//    public List<CardDTO> getCards() {
+//        return cards;
+//    }
 }
