@@ -12,11 +12,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/clients")
 public class ClientController {
+
     @Autowired
     private ClientRepository clientRepository;
 
@@ -51,7 +53,7 @@ public class ClientController {
 
 
     @GetMapping("{id}")
-    public ResponseEntity<Object> getClient(@PathVariable String id){
+    public ResponseEntity<Object> getClient(@PathVariable UUID id){
         Client client = clientRepository.findClientById(id);
 
     if (client != null){

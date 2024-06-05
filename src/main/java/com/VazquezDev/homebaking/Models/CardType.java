@@ -1,5 +1,7 @@
 package com.VazquezDev.homebaking.Models;
 
-public enum CardColor {
+public enum CardType {
 
+    CREDIT,
+    DEBIT
 }

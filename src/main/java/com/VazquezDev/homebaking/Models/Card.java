@@ -12,9 +12,7 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Client cardHolder;
-
-//    private CardType cardType;
+    private CardType cardType;
     private CardColor cardColor;
 
     private String number;
@@ -32,9 +30,8 @@ public class Card {
     public Card() {
     }
 
-    public Card(Client cardHolder, CardColor cardColor, String number, String cvv, LocalDate fromDate, LocalDate thruDate) {
-        this.cardHolder = cardHolder;
-//        this.cardType = cardType;
+    public Card(CardType cardType, CardColor cardColor, String number, String cvv, LocalDate fromDate, LocalDate thruDate) {
+        this.cardType = cardType;
         this.cardColor = cardColor;
         this.number = number;
         this.cvv = cvv;
@@ -42,19 +39,18 @@ public class Card {
         this.thruDate = thruDate;
     }
 
+
     public Long getId() {
         return id;
     }
 
-
-    public Client getCardHolder() {
-        return cardHolder;
+    public CardType getCardType() {
+        return cardType;
     }
 
-    public void setCardHolder(Client cardHolder) {
-        this.cardHolder = cardHolder;
+    public void setCardType(CardType cardType) {
+        this.cardType = cardType;
     }
-
 
     public CardColor getCardColor() {
         return cardColor;

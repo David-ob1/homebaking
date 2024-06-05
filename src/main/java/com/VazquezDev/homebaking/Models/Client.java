@@ -4,12 +4,15 @@ import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
+
+
 
     private String name,lastName,email,password;
     @OneToMany(mappedBy = "client",fetch = FetchType.EAGER)
@@ -19,7 +22,7 @@ public class Client {
     private Set<ClientLoan> clientLoans = new HashSet<>();
 
     @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
-    private Set<Card> cards;
+    private Set<Card> cards = new HashSet<>();
 
     public Client() {
     }
@@ -31,7 +34,7 @@ public class Client {
         this.password = password;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 

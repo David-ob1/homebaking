@@ -4,11 +4,12 @@ import com.VazquezDev.homebaking.Models.Client;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class ClientDTO {
 
-    private String id;
+    private UUID id;
 
     private String name,lastName,email;
 
@@ -34,7 +35,7 @@ public class ClientDTO {
 
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
