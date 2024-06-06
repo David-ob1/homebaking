@@ -25,7 +25,7 @@ public class CardController {
     @GetMapping("/card/{id}")
     public ResponseEntity<Object> getCard(@PathVariable Long id){
 
-        Card card = cardRepository.findCardbyId(id);
+        Card card = cardRepository.findCardById(id);
 
         if (card != null){
             return new ResponseEntity<>(new CardDTO(card), HttpStatus.OK);
