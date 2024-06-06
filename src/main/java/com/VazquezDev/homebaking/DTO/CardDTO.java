@@ -1,6 +1,8 @@
 package com.VazquezDev.homebaking.DTO;
 
+import com.VazquezDev.homebaking.Models.Card;
 import com.VazquezDev.homebaking.Models.CardColor;
+import com.VazquezDev.homebaking.Models.CardType;
 import com.VazquezDev.homebaking.Models.TransactionType;
 
 import java.time.LocalDate;
@@ -10,7 +12,7 @@ public class CardDTO {
 
     private String cardHolder;
 
-    private TransactionType type;
+    private CardType type;
 
     private CardColor color;
 
@@ -22,7 +24,17 @@ public class CardDTO {
 
     private LocalDate thruDate;
 
-//    public
+    public CardDTO (Card card){
+        id = card.getId();
+        cardHolder = card.getClient().getName() + " " + card.getClient().getLastName();
+        type = card.getCardType();
+        color = card.getCardColor();
+        number = card.getNumber();
+        cvv = card.getCvv();
+        fromDate = card.getFromDate();
+        thruDate = card.getThruDate();
+
+    }
 
 
 
@@ -34,7 +46,7 @@ public class CardDTO {
         return cardHolder;
     }
 
-    public TransactionType getType() {
+    public CardType getType() {
         return type;
     }
 
@@ -57,4 +69,6 @@ public class CardDTO {
     public LocalDate getThruDate() {
         return thruDate;
     }
+
+
 }
