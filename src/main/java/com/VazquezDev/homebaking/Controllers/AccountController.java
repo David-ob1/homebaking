@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/account")
+@RequestMapping("/api/accounts")
 public class AccountController {
 
     @Autowired
@@ -26,7 +26,7 @@ public class AccountController {
         return accountRepository.findAll();
     }
 
-    @GetMapping("/accounts/{id}")
+    @GetMapping("/account/{id}")
     public ResponseEntity<Object> getAccount(@PathVariable String id){
 
          Account account = accountRepository.findAccountById(id);
@@ -34,7 +34,7 @@ public class AccountController {
          if (account != null){
              return new ResponseEntity<>(new AccountDTO(account), HttpStatus.OK);
          }else{
-             return new ResponseEntity<>("Account not found", HttpStatus.OK);
+             return new ResponseEntity<>("Account not found", HttpStatus.FORBIDDEN);
          }
 
     }
