@@ -27,7 +27,9 @@ public class HomebakingApplication {
 									, AccountRepository accountRepository
 									, TransactionRepository transactionRepository
 									, LoanRepository loanRepository
-									, ClientLoanRepository clientLoanRepository){
+									, ClientLoanRepository clientLoanRepository
+									,CardRepository cardRepository
+									 ){
 
 	return args -> {
 
@@ -100,6 +102,17 @@ public class HomebakingApplication {
 	ClientLoan client2LoanB = new ClientLoan(200.000,36 );
 	nicolas.addClientLoan(client2LoanB);
 	Automotive.addClientLoan(client2LoanB);
+
+
+	Card clientCardDebit = new Card(CardType.DEBIT,CardColor.SILVER,"3000 0000 0000 0002","117",LocalDate.now(),LocalDate.now().plusYears(5));
+
+			melba.addCard(clientCardDebit);
+			cardRepository.save(clientCardDebit);
+
+	Card clientCardCredit = new Card(CardType.CREDIT,CardColor.TITANIUM,"0500 0000 0000 0001","003",LocalDate.now(),LocalDate.now().plusYears(5));
+
+			melba.addCard(clientCardCredit);
+			cardRepository.save(clientCardCredit);
 
 	};
 
