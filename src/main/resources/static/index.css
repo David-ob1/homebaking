@@ -10,6 +10,10 @@
     background-color:var(--color-hv) ;
 }
 :root{
+
+    --color-zaffre:#0D21A1;
+    --color-oxford:#011638;
+    --color-emerald:#23CE6B;
         --color-efect:#0ef;
         --color-contrast:  #081b29;
     --nav-bg:#1c2754;
