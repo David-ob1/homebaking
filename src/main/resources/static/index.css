@@ -369,3 +369,47 @@ footer{
     border-bottom: 1px solid white;
     border-bottom-width:.5px!important ;
 }
+
+
+
+/* slider css   */
+
+.slider{
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider .slide-track{
+    display: flex;
+    -webkit-animation:scroll 40s linear infinite;
+    animation: scroll 10s linear infinite;
+    width: calc(120px * 12);
+}
+
+.slider .slide{
+    width: 120px;
+}
+
+.slider .slide i {
+    font-size: 60px;
+}
+
+
+@keyframes scroll {
+
+    0%{
+        -webkit-transform:  translateX(0);
+        transform:  translateX(0);
+
+    }
+
+    100%{
+        -webkit-transform:  translateX(calc(-120px * 6));
+        transform:  translateX(calc(-120px * 6));
+
+    }
+
+    
+}
