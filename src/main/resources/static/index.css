@@ -20,6 +20,7 @@
     --color-hv:#17acc9;
     --bg-primary:#080c2b;            
     --bg-secondary:#080d36;
+    --bg-dark-blue:hwb(233 3% 83%);
     /* --bg-scroll:#004480; */
     
 }
@@ -237,9 +238,34 @@ gap: .8rem;
 text-align: justify;
 }
 
+.card-services{
+    max-width: 370px;
+    margin: 10px;
+}
+
 .services{
     background: var(--bg-primary);
+    background: var(--bg-dark-blue);
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+
    
+}
+
+.service-article{
+    background-color: var(--nav-bg);
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+}
+
+.services-div > img{
+    width: 100%;
+    object-fit: contain;
+
 }
 
 .accounts-container{
@@ -304,7 +330,11 @@ border: 1px solid var(--bg-secondary);
 }
 
 footer{
-    background-color: black;
+    min-height: 60px;
+    background-color: var(--nav-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
